@@ -5,6 +5,8 @@ import { getAuthToken } from '@/lib/auth';
 import { fetchQuery } from 'convex/nextjs';
 import Link from 'next/link';
 
+export const dynamic = 'force-dynamic';
+
 export default async function SuccessPage() {
   const token = await getAuthToken();
 
