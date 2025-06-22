@@ -7,7 +7,7 @@ const isProtectedRoute = createRouteMatcher(['/dashboard(.*)'])
 
 export default clerkMiddleware(async (auth, req) => {
 
-  const token = (await (await auth()).getToken({ template: "convex" }))
+  const token = await auth.getToken({ template: "convex" });
 
 
   const { hasActiveSubscription } = await fetchQuery(api.subscriptions.getUserSubscriptionStatus, {
